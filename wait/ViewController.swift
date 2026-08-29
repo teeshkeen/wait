@@ -7,11 +7,42 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    private let manager = CoreDataManager.shared
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        manager.impulses.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        var content = cell.defaultContentConfiguration()
+        content.text = manager.impulses[indexPath.row].title
+        cell.contentConfiguration = content
 
+        return cell
+    }
+    
+    private lazy var tableView: UITableView = {
+        let table = UITableView(frame: .zero, style: .insetGrouped)
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.delegate = self
+        table.dataSource = self
+        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        return table
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        view.addSubview(tableView)
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+        ])
     }
 
 
