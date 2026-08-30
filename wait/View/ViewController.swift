@@ -24,6 +24,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(ImpulseDetailViewController(impulse: manager.impulses[indexPath.row]), animated: true)
+    }
+    
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .insetGrouped)
         table.translatesAutoresizingMaskIntoConstraints = false
@@ -32,8 +36,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return table
     }()
+    
+    private lazy var addButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(systemItem: .add, primaryAction: UIAction { [weak self] _ in self?.addButtonTapped()
+        })
+        button.title = "Add"
+        return button
+    }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "wait?"
+        self.navigationItem.rightBarButtonItem = addButton
         
         view.addSubview(tableView)
         
@@ -43,6 +63,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
+    }
+    
+    private func addButtonTapped() {
+        let addImpulseVC = AddImpulseViewController()
+        self.navigationController?.pushViewController(addImpulseVC, animated: true)
     }
 
 

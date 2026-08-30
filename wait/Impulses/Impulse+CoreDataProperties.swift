@@ -37,4 +37,6 @@ extension Impulse : Identifiable {
         managedObjectContext?.delete(self)
         try? managedObjectContext?.save()
     }
+    
+  
 }

@@ -16,6 +16,10 @@
 		C26382D53042EF9A00D79116 /* wait.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C26382CE3042EF9A00D79116 /* wait.xcdatamodeld */; };
 		C26382D63042EF9A00D79116 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C26382C73042EF9A00D79116 /* Assets.xcassets */; };
 		C26382D83042EF9A00D79116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26382CB3042EF9A00D79116 /* LaunchScreen.storyboard */; };
+		C2B54FC030434F6F00FD5592 /* AddImpulseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B54FBF30434F6F00FD5592 /* AddImpulseViewController.swift */; };
+		C2B54FC43044482100FD5592 /* ImpulseTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B54FC33044482100FD5592 /* ImpulseTimes.swift */; };
+		C2B54FC63044524100FD5592 /* ImpulseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B54FC53044524100FD5592 /* ImpulseDetailViewController.swift */; };
+		C2B54FC8304452E600FD5592 /* ImpulseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B54FC7304452E600FD5592 /* ImpulseStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		C26382CC3042EF9A00D79116 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C26382CD3042EF9A00D79116 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C26382D03042EF9A00D79116 /* wait.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wait.xcdatamodel; sourceTree = "<group>"; };
+		C2B54FBF30434F6F00FD5592 /* AddImpulseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImpulseViewController.swift; sourceTree = "<group>"; };
+		C2B54FC33044482100FD5592 /* ImpulseTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpulseTimes.swift; sourceTree = "<group>"; };
+		C2B54FC53044524100FD5592 /* ImpulseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpulseDetailViewController.swift; sourceTree = "<group>"; };
+		C2B54FC7304452E600FD5592 /* ImpulseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpulseStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,7 @@
 		C26382CF3042EF9A00D79116 /* wait */ = {
 			isa = PBXGroup;
 			children = (
+				C2B54FBE30434F4C00FD5592 /* View */,
 				C26382D93042EFA100D79116 /* Impulses */,
 				C26382C63042EF9A00D79116 /* AppDelegate.swift */,
 				C26382C73042EF9A00D79116 /* Assets.xcassets */,
@@ -69,7 +78,6 @@
 				C26382C93042EF9A00D79116 /* Info.plist */,
 				C26382CB3042EF9A00D79116 /* LaunchScreen.storyboard */,
 				C26382CC3042EF9A00D79116 /* SceneDelegate.swift */,
-				C26382CD3042EF9A00D79116 /* ViewController.swift */,
 				C26382CE3042EF9A00D79116 /* wait.xcdatamodeld */,
 			);
 			path = wait;
@@ -82,6 +90,18 @@
 				C26382C33042EF9000D79116 /* Impulse+CoreDataProperties.swift */,
 			);
 			path = Impulses;
+			sourceTree = "<group>";
+		};
+		C2B54FBE30434F4C00FD5592 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C26382CD3042EF9A00D79116 /* ViewController.swift */,
+				C2B54FBF30434F6F00FD5592 /* AddImpulseViewController.swift */,
+				C2B54FC33044482100FD5592 /* ImpulseTimes.swift */,
+				C2B54FC53044524100FD5592 /* ImpulseDetailViewController.swift */,
+				C2B54FC7304452E600FD5592 /* ImpulseStatus.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,11 +177,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2B54FC030434F6F00FD5592 /* AddImpulseViewController.swift in Sources */,
+				C2B54FC43044482100FD5592 /* ImpulseTimes.swift in Sources */,
 				C26382C43042EF9000D79116 /* Impulse+CoreDataClass.swift in Sources */,
+				C2B54FC8304452E600FD5592 /* ImpulseStatus.swift in Sources */,
 				C26382D13042EF9A00D79116 /* AppDelegate.swift in Sources */,
 				C26382D23042EF9A00D79116 /* CoreDataManager.swift in Sources */,
 				C26382D33042EF9A00D79116 /* SceneDelegate.swift in Sources */,
 				C26382D43042EF9A00D79116 /* ViewController.swift in Sources */,
+				C2B54FC63044524100FD5592 /* ImpulseDetailViewController.swift in Sources */,
 				C26382D53042EF9A00D79116 /* wait.xcdatamodeld in Sources */,
 				C26382C53042EF9000D79116 /* Impulse+CoreDataProperties.swift in Sources */,
 			);
